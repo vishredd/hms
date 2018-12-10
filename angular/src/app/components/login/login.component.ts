@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
       this.users=users;
 
       window.localStorage.setItem("auth-key",users.indexNo);
-      this.loginService.setLoggedin(false);
+      this.loginService.setLoggedin(true);
 
       this.loginService.setIndex(this.users.indexNo);
       if(this.users.type=="student"){

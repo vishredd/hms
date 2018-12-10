@@ -26,7 +26,7 @@ export class AdminService {
     return this.http.post("http://localhost/Hall-Management-System/api/payment.php",{"indexno":indexno,"price":price}).map(res=>res.json());
   }
   getUserDetails(){
-    return this.http.get("http://localhost/Hall-Management-System/api/userDetails.php").map(res=>res.json());
+    return this.http.get("http://localhost/api/userDetails.php").map(res=>res.json());
   }
 }
 

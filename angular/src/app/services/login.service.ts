@@ -20,10 +20,10 @@ export class LoginService {
     var headers= new Headers();
     headers.append('Content-Type','application/X-www-form=urlencoded');
 
-    return this.http.post("http://localhost/Hall-Management-System/api/login.php",{"index_signin":index_signin,"password_signin":password_signin}).map(res=>res.json());
+    return this.http.post("http://localhost/api/login.php",{"index_signin":index_signin,"password_signin":password_signin}).map(res=>res.json());
   }
   getDetails(){
-    return this.http.post("http://localhost/Hall-Management-System/api/user.php",{"indexNo":this.indexNo}).map(res=>res.json());
+    return this.http.post("http://localhost/api/user.php",{"indexNo":this.indexNo}).map(res=>res.json());
   }
   setIndex(index_signin){
     this.indexNo=index_signin;
@@ -32,7 +32,7 @@ export class LoginService {
     return this.indexNo;
   }
   updateDetails(indexNo,firstname,lastname,password){
-    return this.http.post("http://localhost/Hall-Management-System/api/update.php",{"indexno":indexNo,"firstname":firstname,"lastname":lastname,"password":password}).map(res=>res.json());
+    return this.http.post("http://localhost/api/update.php",{"indexno":indexNo,"firstname":firstname,"lastname":lastname,"password":password}).map(res=>res.json());
   }
   
   private _errorHandler(error:Response){

@@ -12,10 +12,11 @@ export class EmployeeService {
   indexNo:string;
   constructor(private loginservice:LoginService,private http:Http) {
     this.indexNo= this.loginservice.getIndex();
+    
    }
 
   getDetails(){
-    return this.http.post("http://localhost/Hall-Management-System/api/employee.php",{"indexNo":this.indexNo}).map(res=>res.json());
+    return this.http.post("http://localhost/api/employee.php",{"indexNo":this.indexNo}).map(res=>res.json());
   }
 
   employeeAssign(){
